@@ -8,7 +8,7 @@ const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi)
 const STOPS = [
   { id: 'top', label: 'Opening' },
   { id: 'story', label: "Season's End" },
-  { id: 'legacy-timeline', label: 'The Legacy' },
+  { id: 'legacy-timeline', label: 'The Rivalry' },
 ]
 
 // A fixed vertical progress rail on the right edge: a track, a fill and thumb

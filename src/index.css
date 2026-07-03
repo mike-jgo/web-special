@@ -4,7 +4,10 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --color-dls-green: #056839;
   --color-dls-green-deep: #034025;
+  --color-dls-green-bright: #2bbf6f;
   --color-gold: #d4af37;
+  --color-nu-blue: #3d5afe;
+  --color-nu-yellow: #ffd21e;
   --animate-glow: glow 3s ease-in-out infinite;
 }
 
