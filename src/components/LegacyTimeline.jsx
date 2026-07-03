@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { titles } from '../data/titles'
 
+// The timeline shows only the last decade of titles; the full record lives in
+// data/titles.js. Adjust RECENT_YEARS to lengthen or shorten the montage.
+const RECENT_YEARS = 10
+const latestYear = Math.max(...titles.map((t) => t.year))
+const shownTitles = titles.filter((t) => t.year > latestYear - RECENT_YEARS)
+
 // Vertical scroll steps through the titles one at a time. Each node gets
 // STEP_VH worth of viewport height of scroll before the next becomes active.
 const STEP_VH = 0.7
@@ -23,7 +29,7 @@ export default function LegacyTimeline() {
   const activeRef = useRef(0)
   const [active, setActive] = useState(0)
   const [height, setHeight] = useState('100vh')
-  const n = titles.length
+  const n = shownTitles.length
 
   useEffect(() => {
     const wrapper = wrapperRef.current
@@ -71,7 +77,7 @@ export default function LegacyTimeline() {
     })
   }
 
-  const activeTitle = titles[active]
+  const activeTitle = shownTitles[active]
 
   return (
     <section
@@ -112,7 +118,7 @@ export default function LegacyTimeline() {
                   : 'border-white/15'
               }`}
             >
-              {titles.map((t, i) => (
+              {shownTitles.map((t, i) => (
                 <img
                   key={t.season}
                   src={t.image}
@@ -158,7 +164,7 @@ export default function LegacyTimeline() {
                 transform: `translateX(calc(-${active} * ${CELL}px - ${CELL / 2}px))`,
               }}
             >
-              {titles.map((t, i) => {
+              {shownTitles.map((t, i) => {
                 const isActive = i === active
                 const passed = i <= active
                 return (

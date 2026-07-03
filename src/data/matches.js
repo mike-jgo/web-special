@@ -15,7 +15,7 @@ export const matches = [
       [18, 25],
       [19, 25],
     ],
-    note: 'NU sweeps the series for back-to-back titles.',
+    note: 'NU goes on to secure back-to-back titles.',
     image: '/story/game2.jpg',
   },
 ]
