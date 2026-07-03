@@ -32,25 +32,6 @@ export default function Hero() {
           a rebuilt identity, and a perfect 16–0 season that brought them back to
           the top.
         </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Button
-            as="a"
-            href="#story"
-            variant="solid"
-            icon={<StarIcon className="h-4 w-4 text-dls-green" />}
-          >
-            Start the Story
-          </Button>
-          <Button
-            as="a"
-            href="#matches"
-            variant="ghost"
-            icon={<PlayCardIcon className="h-4 w-4" />}
-          >
-            View the matches
-          </Button>
-        </div>
       </div>
 
       <ScrollCue />
